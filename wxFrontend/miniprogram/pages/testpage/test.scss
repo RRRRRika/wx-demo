@@ -1,0 +1,40 @@
+/* pages/testpage/test.wxss */
+.btn-test {
+  margin-top: 70%;
+}
+
+.box {
+  padding: 20rpx;
+  width: 80%;
+  border-top: #aaa solid 2rpx;
+  &:first-of-type {
+    border-top: none;
+  }
+
+  &-title {
+    font-size: 50rpx;
+
+    display: block;
+    padding: 10rpx;
+  }
+
+  &-msg {
+    background-color: #ddd;
+    padding: 10rpx;
+    padding-left: 25rpx;
+    border-radius: 50rpx;
+    margin-top: 10rpx;
+    margin-bottom: 20rpx;
+
+    display: block;
+  }
+}
+
+.btn-choose {
+  margin-top: 50rpx;
+}
+
+.btn-upload {
+  margin-top: 50rpx;
+  margin-bottom: 100rpx;
+}

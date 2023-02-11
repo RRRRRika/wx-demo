@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: wxSpringBootBackend
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 100MB
+  datasource:
+    url: jdbc:mysql://databaseIp:3306/demo?useUnicode=true&characterEncoding=utf8&autoReconnect=true
+    username: test
+    password: xxxxx
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # hikariCP
+    hikari:
+      auto-commit: false
+      connection-timeout: 3000
+      validation-timeout: 3000
+      max-lifetime: 60000
+      maximum-pool-size: 20
+      minimum-idle: 1
+  data:
+    redis:
+      host: databaseIp
+      port: 6379
+      password: xxxxx
+      database: 0
+      # lettuce client
+      lettuce:
+        pool:
+          max-idle: 8
+          max-active: 16

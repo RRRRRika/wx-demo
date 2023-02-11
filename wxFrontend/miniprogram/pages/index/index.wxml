@@ -1,0 +1,8 @@
+<view>
+  <view class="welcome">
+    欢迎
+  </view>
+  <view>
+    <button bindtap="toTest" type="primary">Test Page</button>
+  </view>
+</view>
