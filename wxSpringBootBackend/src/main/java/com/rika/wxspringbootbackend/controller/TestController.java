@@ -59,4 +59,15 @@ public class TestController {
         }
     }
 
+    @RequestMapping("/download")
+    public ResponseEntity<byte[]> download() throws IOException {
+        File file = new File("D:/pix/恋×シンアイ彼女/星奏.png");
+        byte[] content = Files.readAllBytes(file.toPath());
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.IMAGE_PNG);
+        headers.setContentLength(content.length);
+
+        return ResponseEntity.ok().headers(headers).body(content);
+    }
+
 }

@@ -5,7 +5,8 @@ Page({
     userResp: '',
     adminResp: '',
     imgUrl: '',
-    chooseImgUrl: ''
+    chooseImgUrl: '',
+    downloadImgPath: ''
   },
   getData() {
     type dataType = {
@@ -77,6 +78,20 @@ Page({
       success: res => {
         console.log('upload success');
         console.log(res);
+      }
+    })
+  }, 
+  downloadFile() {
+    wx.downloadFile({
+      url: 'http://localhost:8080/test/download',
+      // filePath: "../../static/download.png",
+      header: {
+        Authorization: 'Bearer ' + wx.getStorageSync('token')
+      },
+      success: res => {
+        this.setData({
+          downloadImgPath: res.tempFilePath
+        })
       }
     })
   }

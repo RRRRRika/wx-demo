@@ -18,6 +18,10 @@
       <button type="default" bindtap="chooseFile" class="btn-choose">choose image</button>
       <button type="primary" bindtap="uploadFile" class="btn-upload">upload image</button>
     </view>
+    <view class="box">
+      <image src="{{ downloadImgPath }}" mode="aspectFit" wx:if="{{ downloadImgPath }}"/>
+      <button type="primary" bindtap="downloadFile" class="btn-download">download file</button>
+    </view>
   </view>
   <view wx:else class="btn-test">
     <button bindtap="getData" type="primary">Test</button>
