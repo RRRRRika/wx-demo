@@ -94,5 +94,25 @@ Page({
         })
       }
     })
+  },
+  downloadExcel() {
+    wx.downloadFile({
+      url: 'http://localhost:8080/test/excel',
+      filePath: wx.env.USER_DATA_PATH + '/exampleExcel.xlsx',
+      header: {
+        Authorization: 'Bearer ' + wx.getStorageSync('token')
+      },
+      success: res => {
+        console.log(res.filePath);
+        wx.openDocument({
+          filePath: res.filePath,
+          showMenu: true,
+          fileType: 'xlsx',
+          success: () => {
+            console.log('打开文件成功');
+          }
+        })
+      }
+    })
   }
 })

@@ -22,6 +22,9 @@
       <image src="{{ downloadImgPath }}" mode="aspectFit" wx:if="{{ downloadImgPath }}"/>
       <button type="primary" bindtap="downloadFile" class="btn-download">download file</button>
     </view>
+    <view class="box">
+      <button type="primary" bindtap="downloadExcel" class="btn-excel">download excel</button>
+    </view>
   </view>
   <view wx:else class="btn-test">
     <button bindtap="getData" type="primary">Test</button>
